@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Halaman Tidak Ditemukan | Meowville"
+  description="Alamat yang Anda buka tidak tersedia di situs legal Meowville."
+  noindex={true}
+  bodyClass="has-paw-decor"
+>
+  <div class="paw-decor paw-decor--top-right" aria-hidden="true">
+    <img src="/svg/big_paw.svg" alt="" width="178" height="181" decoding="async" />
+  </div>
+  <div class="paw-decor paw-decor--bottom-left" aria-hidden="true">
+    <img src="/svg/small_paw.svg" alt="" width="120" height="128" decoding="async" />
+  </div>
+
+  <section class="status-page" aria-labelledby="not-found-title">
+    <div class="card not-found-card">
+      <p class="overline">404</p>
+      <h1 id="not-found-title" class="display-title">Halaman tidak ditemukan</h1>
+      <p class="status-lead">
+        Alamat yang Anda buka tidak tersedia atau sudah dipindahkan.
+      </p>
+      <div class="not-found-actions">
+        <a class="btn btn--primary" href="/">Kembali ke beranda</a>
+      </div>
+      <nav class="not-found-links" aria-label="Halaman yang tersedia">
+        <a href="/privacy">Kebijakan Privasi</a>
+        <a href="/terms">Ketentuan Layanan</a>
+        <a href="/hapus-akun">Hapus Akun</a>
+      </nav>
+    </div>
+  </section>
+</Base>

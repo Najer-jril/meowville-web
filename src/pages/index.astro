@@ -1,0 +1,123 @@
+---
+import Base from '../layouts/Base.astro';
+import DemoBanner from '../components/DemoBanner.astro';
+import Icon, { type IconName } from '../components/Icon.astro';
+
+interface LegalRow {
+  href: string;
+  icon: IconName;
+  title: string;
+  description: string;
+}
+
+const legalDocs: LegalRow[] = [
+  {
+    href: '/privacy',
+    icon: 'policy',
+    title: 'Kebijakan Privasi',
+    description: 'Data yang kami simpan, izin perangkat, keamanan, dan hak pengguna.',
+  },
+  {
+    href: '/terms',
+    icon: 'gavel',
+    title: 'Ketentuan Layanan',
+    description: 'Aturan pemesanan kamar, pembatalan, dan status mode demo.',
+  },
+];
+---
+
+<Base
+  title="Meowville | Informasi Legal dan Dukungan"
+  description="Halaman resmi kebijakan privasi, ketentuan layanan, panduan penghapusan akun, dan kontak dukungan aplikasi Meowville."
+  bodyClass="has-paw-decor"
+>
+  <div class="paw-decor paw-decor--top-right" aria-hidden="true">
+    <img src="/svg/big_paw.svg" alt="" width="178" height="181" decoding="async" />
+  </div>
+  <div class="paw-decor paw-decor--bottom-left" aria-hidden="true">
+    <img src="/svg/small_paw.svg" alt="" width="120" height="128" decoding="async" />
+  </div>
+
+  <div class="home-stack">
+    <header class="home-hero">
+      <div class="home-brand">
+        <img
+          src="/logo.png"
+          alt="Logo Meowville"
+          width="48"
+          height="48"
+          class="home-brand__img"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="home-brand__text">
+          <h1 class="display-title">Meowville</h1>
+          <p class="home-tagline">Rumah kedua yang nyaman untuk kucing.</p>
+        </div>
+      </div>
+      <p class="home-summary">
+        Halaman resmi dokumen legal, panduan penghapusan akun, dan kontak dukungan aplikasi
+        Meowville.
+      </p>
+    </header>
+
+    <DemoBanner />
+
+    <section class="home-section" aria-labelledby="section-legal">
+      <h2 id="section-legal" class="section-label">Dokumen legal</h2>
+      <nav class="card menu-group" aria-label="Dokumen legal Meowville">
+        {
+          legalDocs.map((doc) => (
+            <a class="menu-row" href={doc.href}>
+              <span class="icon-badge" aria-hidden="true">
+                <Icon name={doc.icon} size={20} />
+              </span>
+              <span class="menu-row__text">
+                <span class="menu-row__title">{doc.title}</span>
+                <span class="menu-row__desc">{doc.description}</span>
+              </span>
+              <span class="menu-row__chevron" aria-hidden="true">
+                <Icon name="chevron_right" size={20} />
+              </span>
+            </a>
+          ))
+        }
+      </nav>
+    </section>
+
+    <section class="home-section" aria-labelledby="section-account">
+      <h2 id="section-account" class="section-label">Akun dan dukungan</h2>
+      <div class="action-grid">
+        <a class="action-card action-card--danger" href="/hapus-akun">
+          <div class="action-card__head">
+            <span class="icon-badge icon-badge--danger" aria-hidden="true">
+              <Icon name="delete_forever" size={20} />
+            </span>
+            <span class="menu-row__chevron" aria-hidden="true">
+              <Icon name="chevron_right" size={20} />
+            </span>
+          </div>
+          <span class="action-card__title action-card__title--danger">Hapus Akun</span>
+          <span class="action-card__desc">
+            Langkah menghapus akun Meowville dan seluruh data Anda secara permanen.
+          </span>
+        </a>
+
+        <a class="action-card action-card--support" href="mailto:meowville@najer.dev">
+          <div class="action-card__head">
+            <span class="icon-badge" aria-hidden="true">
+              <Icon name="mail" size={20} />
+            </span>
+            <span class="menu-row__chevron" aria-hidden="true">
+              <Icon name="chevron_right" size={20} />
+            </span>
+          </div>
+          <span class="action-card__title">meowville@najer.dev</span>
+          <span class="action-card__desc action-card__desc--alt">
+            Kirim email untuk pertanyaan akun, privasi, atau bantuan aplikasi.
+          </span>
+        </a>
+      </div>
+    </section>
+  </div>
+</Base>

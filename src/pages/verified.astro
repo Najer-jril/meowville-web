@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<Base
+  title="Email Terverifikasi | Meowville"
+  description="Email Anda sudah terverifikasi. Kembali ke aplikasi Meowville untuk masuk."
+  noindex={true}
+  bodyClass="has-paw-decor"
+>
+  <div class="paw-decor paw-decor--verified-tr" aria-hidden="true">
+    <img src="/svg/small_paw.svg" alt="" width="72" height="77" decoding="async" />
+  </div>
+  <div class="paw-decor paw-decor--verified-bl" aria-hidden="true">
+    <img src="/svg/small_paw.svg" alt="" width="64" height="68" decoding="async" />
+  </div>
+
+  <section class="status-page" aria-labelledby="verified-title">
+    <div class="illustration-glow" aria-hidden="true">
+      <img
+        src="/svg/envelope_cat.svg"
+        alt=""
+        width="160"
+        height="160"
+        class="illustration-art"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+
+    <div class="status-copy">
+      <h1 id="verified-title" class="display-title">Email Terverifikasi</h1>
+      <p class="status-lead">
+        Email Anda sudah terverifikasi dan akun siap dipakai. Kembali ke aplikasi Meowville untuk
+        masuk.
+      </p>
+    </div>
+
+    <div class="status-card status-card--success" role="status">
+      <span class="status-card__icon" aria-hidden="true">
+        <Icon name="mark_email_read" size={22} />
+      </span>
+      <span>Verifikasi berhasil</span>
+    </div>
+  </section>
+</Base>
