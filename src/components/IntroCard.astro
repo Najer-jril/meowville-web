@@ -1,0 +1,55 @@
+---
+import Icon, { type IconName } from './Icon.astro';
+
+export interface TocHeading {
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  overline: string;
+  title: string;
+  subtitle: string;
+  updated: string;
+  icon: IconName;
+  headings?: TocHeading[];
+}
+
+const { overline, title, subtitle, updated, icon, headings = [] } = Astro.props;
+const isDanger = icon === 'delete_forever';
+const showToc = headings.length >= 6;
+---
+
+<section class="intro-card" aria-labelledby="doc-title">
+  <div class="intro-card__top">
+    <div class="intro-card__body">
+      <div class="intro-card__heading">
+        <p class:list={['overline', isDanger && 'overline--danger']}>{overline}</p>
+        <h1 id="doc-title" class="doc-title">{title}</h1>
+      </div>
+      <p class="doc-subtitle">{subtitle}</p>
+      <p class="doc-updated">Diperbarui {updated}</p>
+    </div>
+    <div class:list={['icon-badge', isDanger && 'icon-badge--danger']} aria-hidden="true">
+      <Icon name={icon} size={20} />
+    </div>
+  </div>
+
+  {
+    showToc && (
+      <nav class="toc-nav" aria-label="Daftar pasal">
+        <p class="toc-nav__label">Daftar pasal</p>
+        <ol class="toc-list">
+          {headings.map((h, i) => (
+            <li>
+              <a class="toc-link" href={`#${h.slug}`}>
+                <span class="toc-link__num">{String(i + 1).padStart(2, '0')}</span>
+                <span>{h.text}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )
+  }
+</section>

@@ -1,0 +1,1183 @@
+/* ==========================================================================
+   Meowville Legal Web - Design System (synced with Flutter AppTheme)
+   ========================================================================== */
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/PlusJakartaSans-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/PlusJakartaSans-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/PlusJakartaSans-600-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/PlusJakartaSans-600-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/PlusJakartaSans-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/PlusJakartaSans-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: light;
+
+  /* AppColors (Flutter lib/theme/app_theme.dart) */
+  --primary: #0F766E;
+  --primary-soft: #CCEFEA;
+  --primary-muted: #80D5CB;
+  --primary-deep: #00504A;
+  --secondary: #F59E6B;
+  --secondary-soft: #FFE4D2;
+  --accent: #FFC94D;
+  --bg: #FAF8F4;
+  --surface: #FFFFFF;
+  --surface-alt: #F0EEE8;
+  --border: #E5E7EB;
+  --text: #1F2937;
+  --muted: #6B7280;
+  --muted-alt: #525A66;
+  --success: #16A34A;
+  --success-soft: #DCFCE7;
+  --success-text: #166534;
+  --warning: #D97706;
+  --warning-soft: #FEF3C7;
+  --warning-text: #92400E;
+  --danger: #DC2626;
+  --danger-soft: #FEE2E2;
+  --danger-text: #B91C1C;
+  --info: #0284C7;
+  --info-soft: #E0F2FE;
+
+  /* AppRadius */
+  --radius-card: 20px;
+  --radius-button: 16px;
+  --radius-input: 14px;
+  --radius-chip: 10px;
+  --radius-pill: 999px;
+
+  /* AppSpacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-page: 20px;
+
+  /* AppShadows.soft = BoxShadow(0x140F766E, offset 0 4, blur 16) */
+  --shadow-soft: 0 4px 16px rgba(15, 118, 110, 0.08);
+  --shadow-bar: 0 -4px 16px rgba(15, 118, 110, 0.06);
+
+  --font: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --content-max: 720px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/1.5 var(--font);
+  overflow-x: clip;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a[href],
+button:not(:disabled),
+summary,
+select:not(:disabled),
+label[for] {
+  cursor: pointer;
+}
+
+button:disabled,
+select:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+a {
+  color: var(--primary);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--primary-deep);
+}
+
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: var(--radius-input);
+  background: var(--primary);
+  color: #FFFFFF;
+  font: 700 14px/1.2 var(--font);
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  left: 16px;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Page Shell & Layout
+   ========================================================================== */
+
+.page-shell {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: clip;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--space-page);
+}
+
+main.container {
+  flex: 1;
+  padding-top: var(--space-page);
+  padding-bottom: var(--space-2xl);
+}
+
+/* Subtle paw motifs (Flutter brand accent) */
+.paw-decor {
+  position: fixed;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.paw-decor--top-right {
+  top: -42px;
+  right: -34px;
+  width: 148px;
+  opacity: 0.35;
+  transform: rotate(12deg);
+}
+
+.paw-decor--bottom-left {
+  bottom: 64px;
+  left: -36px;
+  width: 112px;
+  opacity: 0.42;
+  transform: rotate(-28deg);
+}
+
+.paw-decor--verified-tr,
+.paw-decor--verified-bl {
+  display: none;
+}
+
+/* ==========================================================================
+   Primitives & Hierarchy
+   ========================================================================== */
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  padding: var(--space-page);
+  box-shadow: var(--shadow-soft);
+}
+
+.overline {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.overline--danger {
+  color: var(--danger-text);
+}
+
+.section-label {
+  margin: 0 0 var(--space-sm);
+  padding-left: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.display-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.icon-badge {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background: var(--primary-soft);
+  color: var(--primary-deep);
+}
+
+.icon-badge--danger {
+  background: var(--danger-soft);
+  color: var(--danger-text);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  min-height: 52px;
+  padding: 12px 24px;
+  border-radius: var(--radius-button);
+  font: 700 16px/1.25 var(--font);
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+.btn--primary:hover {
+  background: var(--primary-deep);
+  color: #FFFFFF;
+}
+
+.btn--primary:active {
+  background: var(--primary-deep);
+  transform: scale(0.99);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn--outline:hover {
+  background: var(--primary-soft);
+  color: var(--primary-deep);
+}
+
+/* ==========================================================================
+   Demo Banner (Flat grounded alert, WCAG AA 6.37:1)
+   ========================================================================== */
+
+.demo-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  background: var(--warning-soft);
+  border: 1px solid rgba(146, 64, 14, 0.18);
+  color: var(--text);
+  border-radius: var(--radius-input);
+  padding: var(--space-lg);
+}
+
+.demo-banner__icon {
+  color: var(--warning-text);
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.demo-banner__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.demo-banner__label {
+  color: var(--warning-text);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Home Page (/) - Flutter Account + Legal Hub rhythm
+   ========================================================================== */
+
+.home-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding-top: var(--space-sm);
+}
+
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.home-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.home-brand__img {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+.home-brand__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.home-tagline {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.home-summary {
+  margin: 0;
+  max-width: 56ch;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grouped AppCard matching Flutter owner_account_screen.dart */
+.menu-group {
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(15, 118, 110, 0.08);
+}
+
+.menu-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  min-height: 76px;
+  padding: 18px var(--space-page);
+  text-decoration: none;
+  color: var(--text);
+  transition: background-color 0.15s ease;
+}
+
+.menu-row + .menu-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--space-page);
+  right: var(--space-page);
+  height: 1px;
+  background: var(--border);
+}
+
+.menu-row:hover {
+  background: #F4FBF9;
+  color: var(--text);
+}
+
+.menu-row:active {
+  background: var(--primary-soft);
+}
+
+.menu-row__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.menu-row__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.menu-row__desc {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.menu-row__chevron {
+  color: var(--muted);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.menu-row:hover .menu-row__chevron,
+.action-card:hover .menu-row__chevron {
+  color: var(--primary-deep);
+  transform: translateX(2px);
+}
+
+/* Secondary action grid: breaks rhythm vs grouped legal card */
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.action-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-height: 120px;
+  padding: var(--space-page);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.12s ease;
+}
+
+.action-card--danger {
+  background: var(--surface);
+  border: 1px solid #FECACA;
+}
+
+.action-card--danger:hover {
+  border-color: var(--danger);
+  background: #FFF9F9;
+  color: var(--text);
+}
+
+.action-card--danger:hover .menu-row__chevron {
+  color: var(--danger-text);
+}
+
+.action-card--danger:active {
+  background: var(--danger-soft);
+}
+
+.action-card--support {
+  background: var(--surface-alt);
+  border: 1px solid rgba(15, 118, 110, 0.14);
+}
+
+.action-card--support:hover {
+  background: #E8E5DC;
+  border-color: var(--primary);
+  color: var(--text);
+}
+
+.action-card--support:active {
+  background: #DFDCD2;
+}
+
+.action-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xs);
+}
+
+.action-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.action-card__title--danger {
+  color: var(--danger-text);
+}
+
+.action-card__desc {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.action-card__desc--alt {
+  color: var(--muted-alt);
+}
+
+/* ==========================================================================
+   Legal Document Pages (/privacy, /terms, /hapus-akun)
+   ========================================================================== */
+
+.stack-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.back-btn {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  border: 1px solid rgba(15, 118, 110, 0.08);
+  color: var(--text);
+  box-shadow: var(--shadow-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.back-btn:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary-muted);
+  color: var(--primary-deep);
+}
+
+.back-btn:active {
+  transform: scale(0.96);
+}
+
+.page-header__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+/* Village motif tucked directly behind IntroCard (Flutter LoginScreen Stack) */
+.legal-hero-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.village-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -10px;
+  pointer-events: none;
+}
+
+.village-art {
+  width: 100%;
+  max-width: 390px;
+  height: auto;
+  opacity: 0.42;
+}
+
+.intro-card {
+  position: relative;
+  z-index: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: var(--space-page);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.intro-card__top {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.intro-card__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.intro-card__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.doc-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+  overflow-wrap: break-word;
+}
+
+.doc-subtitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.doc-updated {
+  margin: var(--space-xs) 0 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* In-page table of contents for long legal documents */
+.toc-nav {
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+.toc-nav__label {
+  margin: 0 0 var(--space-sm);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.toc-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.toc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 12px;
+  border-radius: var(--radius-chip);
+  background: var(--surface-alt);
+  border: 1px solid transparent;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.toc-link__num {
+  color: var(--primary);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.toc-link:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary-muted);
+  color: var(--primary-deep);
+}
+
+.toc-link:hover .toc-link__num {
+  color: var(--primary-deep);
+}
+
+.toc-link:active {
+  background: var(--primary-muted);
+}
+
+/* Primary legal reading surface (sole elevated card on document pages) */
+.legal-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  border: 1px solid rgba(15, 118, 110, 0.06);
+}
+
+/* Pasal styling with automatic CSS counters (Flutter LegalDocument._Pasal) */
+.legal-prose {
+  counter-reset: pasal;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.legal-prose h2 {
+  counter-increment: pasal;
+  scroll-margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: 28px 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.legal-prose h2:first-child {
+  margin-top: 0;
+}
+
+.legal-prose h2::before {
+  content: counter(pasal, decimal-leading-zero);
+  color: var(--primary);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.legal-prose h2::after {
+  content: "";
+  flex: 1 1 24px;
+  min-width: 12px;
+  height: 1px;
+  background: var(--border);
+}
+
+.legal-prose p {
+  margin: 0 0 var(--space-md);
+  max-width: 64ch;
+}
+
+.legal-prose p:last-child,
+.legal-prose ul:last-child,
+.legal-prose ol:last-child {
+  margin-bottom: 0;
+}
+
+.legal-prose ul,
+.legal-prose ol {
+  margin: 0 0 var(--space-md);
+  padding-left: 20px;
+  max-width: 64ch;
+}
+
+.legal-prose li {
+  margin-bottom: 8px;
+}
+
+.legal-prose li::marker {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.legal-prose li:last-child {
+  margin-bottom: 0;
+}
+
+.legal-prose strong {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.legal-prose a {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.legal-card__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.top-link {
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 0;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.top-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Status Pages (/verified, /404)
+   ========================================================================== */
+
+.status-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xl);
+  padding-block: var(--space-2xl);
+}
+
+/* Single deliberate glow accent on /verified (within R-13 dose cap) */
+.illustration-glow {
+  width: 184px;
+  height: 184px;
+  border-radius: var(--radius-pill);
+  background: radial-gradient(circle, var(--primary-soft) 0%, rgba(204, 239, 234, 0) 72%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustration-art {
+  width: 160px;
+  height: 160px;
+}
+
+.status-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  max-width: 440px;
+}
+
+.status-lead {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.status-card {
+  width: 100%;
+  max-width: 340px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 14px var(--space-page);
+  border-radius: var(--radius-card);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.status-card--success {
+  background: var(--success-soft);
+  border: 1px solid rgba(22, 101, 52, 0.16);
+  color: var(--success-text);
+}
+
+.status-card__icon {
+  color: var(--success-text);
+  display: inline-flex;
+  align-items: center;
+}
+
+.not-found-card {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-2xl) var(--space-page);
+  border: 1px solid rgba(15, 118, 110, 0.08);
+}
+
+.not-found-actions {
+  margin-top: var(--space-sm);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.not-found-links {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-lg);
+  width: 100%;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 20px;
+  font-size: 14px;
+}
+
+.not-found-links a {
+  padding: 6px 2px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.not-found-links a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  padding-bottom: var(--space-xl);
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.footer-inner {
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 8px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 2px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.footer-sep {
+  color: #D1D5DB;
+  user-select: none;
+}
+
+.footer-copy {
+  margin: var(--space-xs) 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (min-width: 600px) {
+  .action-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+@media (min-width: 768px) {
+  main.container {
+    padding-top: var(--space-2xl);
+  }
+
+  .display-title {
+    font-size: 40px;
+  }
+
+  .home-brand__img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card,
+  .intro-card,
+  .action-card {
+    padding: var(--space-xl);
+  }
+
+  .menu-group {
+    padding: 0;
+  }
+
+  .menu-row {
+    padding: 20px var(--space-xl);
+  }
+
+  .menu-row + .menu-row::before {
+    left: var(--space-xl);
+    right: var(--space-xl);
+  }
+
+  .not-found-card {
+    padding: 40px var(--space-xl);
+  }
+
+  .paw-decor--verified-tr {
+    display: block;
+    top: 72px;
+    right: 36px;
+    width: 64px;
+    opacity: 0.55;
+    transform: rotate(12deg);
+  }
+
+  .paw-decor--verified-bl {
+    display: block;
+    bottom: 108px;
+    left: 28px;
+    width: 56px;
+    opacity: 0.5;
+    transform: rotate(-12deg);
+  }
+}
+
+@media (max-width: 479px) {
+  .footer-sep--email {
+    display: none;
+  }
+
+  .footer-email {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 359px) {
+  .container {
+    padding-inline: 16px;
+  }
+
+  .card,
+  .intro-card,
+  .action-card {
+    padding: 16px;
+  }
+
+  .menu-group {
+    padding: 0;
+  }
+
+  .menu-row {
+    padding: 16px;
+  }
+
+  .menu-row + .menu-row::before {
+    left: 16px;
+    right: 16px;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion (R-39)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

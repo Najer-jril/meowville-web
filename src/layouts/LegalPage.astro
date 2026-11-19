@@ -1,0 +1,71 @@
+---
+import Base from './Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import IntroCard, { type TocHeading } from '../components/IntroCard.astro';
+import DemoBanner from '../components/DemoBanner.astro';
+import type { IconName } from '../components/Icon.astro';
+
+interface Props {
+  title: string;
+  appBarTitle: string;
+  overline: string;
+  subtitle: string;
+  updated: string;
+  description: string;
+  icon: IconName;
+  showDemoBanner?: boolean;
+  headings?: TocHeading[];
+}
+
+const {
+  title,
+  appBarTitle,
+  overline,
+  subtitle,
+  updated,
+  description,
+  icon,
+  showDemoBanner = false,
+  headings = [],
+} = Astro.props;
+---
+
+<Base title={`${appBarTitle} | Meowville`} description={description}>
+  <div class="stack-page">
+    <PageHeader title={appBarTitle} />
+
+    <div class="legal-hero-stack">
+      <div class="village-wrap" aria-hidden="true">
+        <img
+          class="village-art"
+          src="/svg/cat_village.svg"
+          alt=""
+          width="390"
+          height="64"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+
+      <IntroCard
+        overline={overline}
+        title={title}
+        subtitle={subtitle}
+        updated={updated}
+        icon={icon}
+        headings={headings}
+      />
+    </div>
+
+    <article class="card legal-card">
+      {showDemoBanner && <DemoBanner />}
+      <div class="legal-prose">
+        <slot />
+      </div>
+      <div class="legal-card__foot">
+        <span>Berlaku sejak {updated}</span>
+        <a class="top-link" href="#top">Kembali ke atas</a>
+      </div>
+    </article>
+  </div>
+</Base>
