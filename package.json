@@ -1,0 +1,22 @@
+{
+  "name": "meowville-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Situs legal statis untuk aplikasi Meowville (meowville.najer.dev)",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^5.7.0"
+  },
+  "devDependencies": {
+    "@fontsource/plus-jakarta-sans": "^5.2.5"
+  }
+}
