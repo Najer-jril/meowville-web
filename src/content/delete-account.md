@@ -38,4 +38,4 @@ Saat akun dihapus, sistem menghapus seluruh data berikut secara permanen:
 
 ## Data yang disimpan
 
-Kami tidak menyimpan data pengguna setelah penghapusan selesai diproses. Jika pencadangan terjadwal aktif, salinan cadangan terhapus otomatis dalam {{N}} hari.
+Kami tidak menyimpan data pengguna setelah penghapusan selesai diproses.
